@@ -54,6 +54,14 @@
         </property>
     </bean>
 
+    <!--1.2、测试验证码-->
+    <bean id="imageCaptchaService" class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService">
+        <property name="captchaEngine">
+            <bean class="com.ssh_wf.CaptchaEngine" />
+        </property>
+        <property name="minGuarantedStorageDelayInSeconds" value="3600" />
+    </bean>
+
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
