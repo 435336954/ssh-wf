@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--1.4、测试spring定时任务-->
+<beans 
+	xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd"
+	default-lazy-init="true">
+
+	<task:annotation-driven />
+	
+	<!-- 丝路购监控 -->
+	<task:scheduled-tasks>
+		<!-- 测试定时 -->
+		<task:scheduled cron="*/5 * * * * ?" ref="testDaemon" method="testMethod" />
+	</task:scheduled-tasks>
+
+</beans>

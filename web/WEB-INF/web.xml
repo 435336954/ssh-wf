@@ -10,7 +10,8 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath*:/applicationContext.xml
+            classpath*:/applicationContext.xml,
+            classpath*:/applicationContext-daemon.xml<!--1.4、测试spring定时任务-->
         </param-value>
     </context-param>
     <listener>
